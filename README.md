@@ -1,4 +1,4 @@
-👋 Hello, I’m @keitharowe. I'm a former .NET developer, turned into team lead, turned into operations. Regarding my developer skills, if its important we should let the professionals handle. :stuck_out_tongue:
+👋 Hello, I’m @keitharowe. I'm a former .NET developer, turned into team lead, turned operations. Regarding my developer skills, if its important we should let the professionals handle. :stuck_out_tongue:
 
 
 <!---
