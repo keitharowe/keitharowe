@@ -1,5 +1,4 @@
-👋 Hello, I’m @keitharowe. I'm a former .NET developer, turned into team lead, turned operations. Regarding my developer skills, if its important we should let the professionals handle. :stuck_out_tongue:
-
+👋 Hello, I’m @keitharowe. Currently I'm building software for a Fortune 500 company using: .NET 6, Azure (DevOps, Storage, Containers, SQL, API Mgmt, B2B, B2C), and Angular 14. I'm team lead for a fantastic, super talented group of developers, designers, project managers.
 
 <!---
 keitharowe/keitharowe is a ✨ special ✨ repository because its `README.md` (this file) appears on your GitHub profile.
