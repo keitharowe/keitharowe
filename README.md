@@ -5,10 +5,11 @@
 I enjoy helping companies and teams build software through improving team processes, deliverying business value utilizing my 20 year expericence and software desgin principles.
 
 ## Recent Accomplishments
-- Application modernization for aFortune 500 company using: .NET 6, Azure (DevOps, Storage, Containers, SQL, API Mgmt, B2B, B2C), and Angular. Team lead for a fantastic, super talented group of developers, designers, and project managers.
+- Application modernization for a Fortune 500 company using: .NET 6, Azure (DevOps, Storage, Containers, SQL, API Mgmt, B2B, B2C), and Angular. Team lead for a fantastic, super talented group of developers, designers, and project managers.
 - Azure Cloud Administrator certification
 - CI/CD implementation and Agile team building
 - Cloud migration of 6 large ASP.NET web applications to Azure
+- Instituted Agile cermonies and education on best practices
 
 ## Past
 - Former CTO of small web and marketing company in Cleveland, Ohio 
