@@ -9,7 +9,7 @@ I enjoy helping companies and teams build software through improving team proces
 - Azure Cloud Administrator certification
 - CI/CD implementation and Agile team building
 - Cloud migration of 6 large ASP.NET web applications to Azure
-- Instituted Agile cermonies and education on best practices
+- Instituted Agile cermonies and education on software development best practices
 
 ## Past
 - Former CTO of small web and marketing company in Cleveland, Ohio 
