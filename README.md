@@ -1,7 +1,9 @@
 👋 Hello, I’m @keitharowe. 
-- Azure Cloud Architect
-- Team Lead
-- Sofware Developer
+- Technology Executive, Cloud Architect specializing in the Microsoft development stack on Azure
+- Team Lead with deep hands on experience
+- Sofware Craftmansship and Design Patterns
+- Ability to navigate complex situations with minimum information to provide clarity, direction and an actionable path forward
+  
 I enjoy helping companies and teams build software through improving team processes, deliverying business value utilizing my 20 year expericence and software desgin principles.
 
 ## Recent Accomplishments
