@@ -7,7 +7,7 @@
 I enjoy helping companies and teams build software through improving team processes, deliverying business value utilizing my 20 year expericence and software desgin principles.
 
 ## Recent Accomplishments
-- Team Leadership and Cloud migration: Instituted software development best practices, cloud migration and future architecture for a 200M. Leading to faster delivery of new features and higher code quality.
+- Team Leadership and Cloud migration: Instituted software development best practices, cloud migration and future architecture for a 200M corporation; leading to faster delivery of new features and higher code quality.
 - Recent project launch for large distributed application, being the driving force behind: API architecture, container orchestration, data structures, framework and platform evaluations, customer identity and access management, Agile methodologies, CI/CD processes, and client-side frameworks React/NextJS to support the rapid growth and expansion of the 200M corporation.
 - Modernization of a cloud-native, line-of-business application for a Fortune 500 electric utility company, utilizing Azure Cloud Infrastructure, Microsoft Entra B2B and B2C, Angular, including custom JWT/OAuth2 implementation, and .NET following Domain Driven Design. Successfully completed within the target budget of 1M, achieved through effective prioritization, constant client communication and scope management.
 - Experience in React Native for web and mobile development of SaaS company.
