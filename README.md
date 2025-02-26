@@ -1,5 +1,6 @@
 👋 Hello, I’m @keitharowe. 
-- Technology Executive, Cloud Architect specializing in the Microsoft development stack on Azure
+- Technology Executive
+- Cloud Architect
 - Team Lead with deep hands on experience
 - Sofware Craftmansship and Design Patterns
 - Ability to navigate complex situations with minimum information to provide clarity, direction and an actionable path forward
@@ -14,6 +15,53 @@ I enjoy helping companies and teams build software through improving team proces
 - Speaker THAT Conference - Azure DevOps for Agencies
 - Defining and driving company goals and exemplifying company values through example, 1 on 1s, and creating a safe, healthy, and desirable place of employment for all employees.
 - Mentorship of junior developers in coding best practices, design patterns, and setting proper example of how to be a professional developer.
+
+## Tech Profile
+A listing of recent technologies and other items, to help give additional context. Hardly an exhaustive list.
+
+### Languages
+- .NET (Core)
+- Typescript
+- Angular
+- ReactNative
+- NextJS
+
+###
+
+### Paradigms
+- Minimum Apis
+- Domain Driven Design
+- CI/CCD pipelines (DevSecOps)
+- API / Microservces
+- Events/Messaging
+- Mobile development
+
+### Cloud
+- Storage
+- Compute
+- Security
+- Pricing
+- Governance
+- Compliance
+
+### Database - Relational, Document
+- Microsoft SQL Server
+- PostgreSQL 
+- Mongo/Cosmos
+  
+### Scripting
+- Powershell
+- Bash
+
+### Platforms
+- Azure DevOps
+- Github
+- Supabase
+
+## Content Management Systems / Integrations
+- Shopify
+- BigCommerce
+- nopCommerce
 
 ## Past
 - Former CTO of small web and marketing company in Cleveland, Ohio 
