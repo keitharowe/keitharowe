@@ -35,8 +35,11 @@ A listing of recent technologies and other items, to help give additional contex
 - API / Microservces
 - Events/Messaging
 - Mobile development
+- Docker
+- Azure Aspire
 
 ### Cloud
+- Containers
 - Storage
 - Compute
 - Security
@@ -57,11 +60,20 @@ A listing of recent technologies and other items, to help give additional contex
 - Azure DevOps
 - Github
 - Supabase
+- Azure Communication Services, Twillo / Sendgrid
+
+### Payment Gateways
+- Authorize.Net
+- Stripe
+- PayPal
 
 ## Content Management Systems / Integrations
 - Shopify
 - BigCommerce
 - nopCommerce
+- Worpress
+- Droople
+- Static file
 
 ## Past
 - Former CTO of small web and marketing company in Cleveland, Ohio 
