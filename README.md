@@ -39,6 +39,7 @@ A listing of recent technologies and other items, to help give additional contex
 - Azure Aspire
 
 ### Cloud
+- Azure Certified [verify](https://learn.microsoft.com/en-us/users/keithalanrowe/credentials/a314102f78ba1346?ref=https%3A%2F%2Fwww.linkedin.com%2F)
 - Containers
 - Storage
 - Compute
@@ -51,6 +52,7 @@ A listing of recent technologies and other items, to help give additional contex
 - Microsoft SQL Server
 - PostgreSQL 
 - Mongo/Cosmos
+- Oracle / API integrations
   
 ### Scripting
 - Powershell
@@ -62,7 +64,7 @@ A listing of recent technologies and other items, to help give additional contex
 - Supabase
 - Azure Communication Services, Twillo / Sendgrid
 
-### Payment Gateways
+### Payment Gateways - API
 - Authorize.Net
 - Stripe
 - PayPal
