@@ -20,7 +20,7 @@ I enjoy helping companies and teams build software through improving team proces
 
 ## Project Showcase
 
-[Showcase of some of my most recent projects]([./project-showcase.md).
+[Showcase of some of my most recent projects]([project-showcase.md).
 
 ## Tech Profile
 
