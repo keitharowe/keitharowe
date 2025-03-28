@@ -8,7 +8,7 @@
 
 I enjoy helping companies and teams build software through improving team processes, delivering business value utilizing my 20 year experience in software design principles.
 
-## Recent Accomplishments
+# Recent Accomplishments
 
 - Avon Lake High School - C# and API Development, held session with Avon Lake High School AP Computer Science students (grades 10, 11, and 12). We covered API development with Blazor and C#, talked about careers in the field and topics such as client/server, http verbs, status codes, and data modeling. While we didn't get a chance to finish our homework forecaster based on the NOAA weather API, it was good to be back in the classroom after my days at Microsoft's TEALS.
 - Team Leadership and Cloud migration: Instituted software development best practices, cloud migration and future architecture for a 200M corporation; leading to faster delivery of new features and higher code quality.
@@ -19,9 +19,7 @@ I enjoy helping companies and teams build software through improving team proces
 - Defining and driving company goals and exemplifying company values through example, 1 on 1s, and creating a safe, healthy, and desirable place of employment for all employees.
 - Mentorship of junior developers in coding best practices, design patterns, and setting proper example of how to be a professional developer.
 
-## Project Showcase
-
-# Project Showcase
+# Project Showcases
 
 ## Strategic Technology Direction, Roadmap, Application Modernization - Perfect Game
 
@@ -82,7 +80,7 @@ focus on just-in-time requirement gathering. Additionally, the budget and scope 
 
 Cross-functional Team Leadership · SAP Integration · Angular · C# · Domain-Driven Design (DDD) · Cloud Computing · Application Modernization · .NET Core · Application Programming Interfaces (API)
 
-## Tech Profile
+# Tech Profile
 
 A listing of recent technologies and other items to help give additional context. Hardly an exhaustive list.
 
@@ -93,8 +91,6 @@ A listing of recent technologies and other items to help give additional context
 - Angular
 - ReactNative
 - NextJS
-
-###
 
 ### Paradigms
 
@@ -163,7 +159,7 @@ A listing of recent technologies and other items to help give additional context
 
 - EOS Entrepreneurial Operating System
 
-## Past
+# Past
 
 - Former CTO of small web and marketing company in Cleveland, Ohio
 
