@@ -1,4 +1,9 @@
-# Keith Rowe Profile
+- [Introduction](#Introduction)
+- [Recent Accomplishments](#Recent-Accomplishments)
+- [Project Showcases](#Project-Showcases)
+- [Tech Profile - skills, languages, platforms, etc.](#Tech-Profile)
+
+# Introduction
 - Technology Executive
 - Cloud Architect
 - Operational Team Lead with deep hands on experience
