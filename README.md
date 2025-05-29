@@ -87,6 +87,15 @@ A listing of recent technologies and other items to help give additional context
 - React Native
 - NextJS
 
+### Application Modernization
+- Reverse Proxy YARP
+- Strangler Fig
+- .NET Framework -> .NET
+- Roadmapping
+- Dependency mapping
+- Monolith, Modular Monolith, Microservices
+- Migration and modernization tools, Azure Migrate
+
 ### Paradigms
 
 - Domain Driven Design
@@ -99,12 +108,14 @@ A listing of recent technologies and other items to help give additional context
 - Docker
 - Azure Aspire
 - git, branching strategies
+- Event Storming
 
 ### Security
-- OAUTH
+- OAuth
 - OpenID Connect - OICD
 - EntraAD, MSAL
 - RBAC
+- OSWAP
 
 ### Cloud
 
@@ -120,7 +131,8 @@ A listing of recent technologies and other items to help give additional context
 - Kubernetes
 - Azure Container Apps
 - Function Apps, Logic Apps
-- Observability, Application Insights, Log Application Workspaces, OpenTelemetry 
+- Observability, Application Insights, Log Application Workspaces, OpenTelemetry
+- Resiliency
 
 ### Database - Relational, Document
 
@@ -129,7 +141,8 @@ A listing of recent technologies and other items to help give additional context
 - PostgreSQL
 - Mongo/Cosmos
 - Oracle / API integrations
-- TSQL
+- TSQL, stored procedures, indexes, maintenance tasks
+- Performance tuning
 
 ### Scripting
 
@@ -144,6 +157,7 @@ A listing of recent technologies and other items to help give additional context
 - Atlassian - Jira, Confluence
 - Azure Communication Services, Twillo / Sendgrid
 - Figma
+- SMTP, Sendgrid, Twillo, Azure Communication Services
 
 ### Payment Gateways - API
 
@@ -165,6 +179,19 @@ A listing of recent technologies and other items to help give additional context
 - Azure DevOps - yaml, classic
 - Github Actions
 - Jenkins
+
+### Infrastructure
+- Firewalls
+- Azure FrontDoor, WAF
+- Networking, subnets, vnets
+- VPN
+- DNS
+- Virtual machines, setup, configure
+- Routing
+
+### Public Hosting
+- Domain name registration
+- Nameserver configuration
 
 ### Business Operating Systems
 
