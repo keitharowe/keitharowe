@@ -1,5 +1,3 @@
-👋 Hello, I’m @keitharowe.
-
 - Technology Executive
 - Cloud Architect
 - Operational Team Lead with deep hands on experience
@@ -89,19 +87,27 @@ A listing of recent technologies and other items to help give additional context
 - .NET (Core)
 - Typescript
 - Angular
-- ReactNative
+- React Native
 - NextJS
 
 ### Paradigms
 
-- Minimum Apis
 - Domain Driven Design
-- CI/CCD pipelines (DevSecOps)
+- Minimum Apis
+- GraphQL
+- CI/CD pipelines (DevSecOps)
 - API / Microservces
 - Events/Messaging
 - Mobile development
 - Docker
 - Azure Aspire
+- git, branching strategies
+
+### Security
+- OAUTH
+- OpenID Connect - OICD
+- EntraAD, MSAL
+- RBAC
 
 ### Cloud
 
@@ -113,10 +119,16 @@ A listing of recent technologies and other items to help give additional context
 - Pricing
 - Governance
 - Compliance
+- PaaS, Serverless
+- Kubernetes
+- Azure Container Apps
+- Function Apps, Logic Apps
+- Observability, Application Insights, Log Application Workspaces, OpenTelemetry 
 
 ### Database - Relational, Document
 
 - Microsoft SQL Server
+- Datawarehouse, Data Lake
 - PostgreSQL
 - Mongo/Cosmos
 - Oracle / API integrations
@@ -132,7 +144,9 @@ A listing of recent technologies and other items to help give additional context
 - Azure DevOps
 - Github
 - Supabase
+- Atlassian - Jira, Confluence
 - Azure Communication Services, Twillo / Sendgrid
+- Figma
 
 ### Payment Gateways - API
 
