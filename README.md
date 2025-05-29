@@ -154,7 +154,7 @@ A listing of recent technologies and other items to help give additional context
 - Stripe
 - PayPal
 
-## Content Management Systems / Integrations
+### Content Management Systems / Integrations
 
 - Shopify
 - BigCommerce
@@ -173,9 +173,6 @@ A listing of recent technologies and other items to help give additional context
 
 - EOS Entrepreneurial Operating System
 
-# Past
-
-- Former CTO of small web and marketing company in Cleveland, Ohio
 
 <!---
 keitharowe/keitharowe is a ✨ special ✨ repository because its `README.md` (this file) appears on your GitHub profile.
