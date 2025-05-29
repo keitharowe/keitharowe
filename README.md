@@ -1,3 +1,4 @@
+# Keith Rowe Profile
 - Technology Executive
 - Cloud Architect
 - Operational Team Lead with deep hands on experience
@@ -20,8 +21,6 @@ I enjoy helping companies and teams build software through improving team proces
 # Project Showcases
 
 ## Strategic Technology Direction, Roadmap, Application Modernization - Perfect Game
-
-Apr 2023 - Aug 2024
 
 Perfect Game USA is an organization dedicated to the development and promotion of youth baseball.
 They host travel team tournaments and individual showcases, to promote and provide valuable
@@ -62,8 +61,6 @@ Perfect Game USA over the years has put an enormous effort into the software tha
 Technology Roadmapping · Microsoft Azure · Technology Leadership · Agile Methodologies · C# · .NET Core · Application Modernization · Application Programming Interfaces (API) · NextJS · Strangler Fig · Domain Driven Design
 
 ## Application Modernization – FirstEnergy, Pennsylvania Customer Assistance Program - PCAP
-
-Feb 2022 - Apr 2023
 
 FirstEnergy is a Fortune 500 utility company operating in the Northeast region of the United States. The Pennsylvania Customer Assistance Program (PCAP) is designed to help income qualified residential customers maintain electric service and eliminate their past due balance. The legacy application was written in the late 90s and due to its age was only used internally by FirstEnergy employees. The public facing online enrollment was handled and managed by an external third-party Dollar Energy Fund. FirstEnergy was looking to bring the application in-house to provide updated application security, increased systems integrations with backend systems, and greater visibility into customer issues and eliminate duplicated processes and data entry.
 
