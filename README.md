@@ -96,6 +96,7 @@ A listing of recent technologies and other items to help give additional context
 - Reverse Proxy YARP
 - Strangler Fig
 - .NET Framework -> .NET
+- Current State vs Future State
 - Roadmapping
 - Dependency mapping
 - Monolith, Modular Monolith, Microservices
@@ -114,6 +115,8 @@ A listing of recent technologies and other items to help give additional context
 - Azure Aspire
 - git, branching strategies
 - Event Storming
+- CQRS
+- Messaging
 
 ### Security
 - OAuth
@@ -129,7 +132,7 @@ A listing of recent technologies and other items to help give additional context
 - Storage
 - Compute
 - Security
-- Pricing
+- Cost Analysis
 - Governance
 - Compliance
 - PaaS, Serverless
@@ -182,8 +185,12 @@ A listing of recent technologies and other items to help give additional context
 ### Pipelines
 
 - Azure DevOps - yaml, classic
+- ARM/Bicep
+- azd
+- Terraform (experimental only)
 - Github Actions
 - Jenkins
+- DevSecOps, GitHub Advanced Security, Coverity Black Duck
 
 ### Infrastructure
 - Firewalls
