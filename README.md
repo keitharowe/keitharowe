@@ -117,6 +117,8 @@ A listing of recent technologies and other items to help give additional context
 - Event Storming
 - CQRS
 - Messaging
+- CQRS
+- Mediator
 
 ### Security
 - OAuth
@@ -124,6 +126,10 @@ A listing of recent technologies and other items to help give additional context
 - EntraAD, MSAL
 - RBAC
 - OSWAP
+
+### Test
+- XUnit, NUnit
+- Grafana k6 (load test)
 
 ### Cloud
 
@@ -156,6 +162,7 @@ A listing of recent technologies and other items to help give additional context
 
 - Powershell
 - Bash
+- winget / Chocolatey 
 
 ### Platforms
 
