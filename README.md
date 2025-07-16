@@ -104,6 +104,7 @@ A listing of recent technologies and other items to help give additional context
 
 ### Paradigms
 
+- Azure Enterprize Architecture / Azure Landing Zones
 - Domain Driven Design
 - Minimum Apis
 - GraphQL
