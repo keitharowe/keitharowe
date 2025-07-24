@@ -117,8 +117,6 @@ A listing of recent technologies and other items to help give additional context
 - git, branching strategies
 - Event Storming
 - CQRS
-- Messaging
-- CQRS
 - Mediator
 
 ### Security
