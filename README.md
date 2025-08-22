@@ -169,6 +169,10 @@ A listing of recent technologies and other items to help give additional context
 - Bash / zSh
 - winget / Chocolatey
 
+### Mobile 
+- Ionic / Capacitor 
+- React Native
+- Expo 
 
 ### Platforms
 
