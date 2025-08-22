@@ -125,10 +125,12 @@ A listing of recent technologies and other items to help give additional context
 - EntraAD, MSAL
 - RBAC
 - OSWAP
+- General best practices as applied to Software Engineering
 
 ### Test
 - XUnit, NUnit
 - Grafana k6 (load test)
+- Playwright
 
 ### Cloud
 
@@ -147,6 +149,10 @@ A listing of recent technologies and other items to help give additional context
 - Observability, Application Insights, Log Application Workspaces, OpenTelemetry
 - Resiliency
 
+### Data
+- Familiar with ETL, Snowflake, Azure Data Factory (ADF), Databricks
+- Python (non-professional)
+
 ### Database - Relational, Document
 
 - Microsoft SQL Server
@@ -160,8 +166,9 @@ A listing of recent technologies and other items to help give additional context
 ### Scripting
 
 - Powershell
-- Bash
-- winget / Chocolatey 
+- Bash / zSh
+- winget / Chocolatey
+
 
 ### Platforms
 
