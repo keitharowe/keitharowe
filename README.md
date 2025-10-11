@@ -14,6 +14,7 @@ I enjoy helping companies and teams build software through improving team proces
 
 # Recent Accomplishments
 
+- Application Modernization project for a northeast Ohio locally owned and operated discount closeout and grocery store, with 61 stores throughout the region, completed and launched in 12 month engagement resulting in improved speed and accuracy in warehouse orders, improved User Experience, and clearning the blocker for infrastructure upgrades
 - Avon Lake High School - C# and API Development, held session with Avon Lake High School AP Computer Science students (grades 10, 11, and 12). We covered API development with Blazor and C#, talked about careers in the field and topics such as client/server, http verbs, status codes, and data modeling. While we didn't get a chance to finish our homework forecaster based on the NOAA weather API, it was good to be back in the classroom after my days at Microsoft's TEALS.
 - Team Leadership and Cloud migration: Instituted software development best practices, cloud migration and future architecture for a 200M corporation; leading to faster delivery of new features and higher code quality.
 - Recent project launch for large distributed application, being the driving force behind: API architecture, container orchestration, data structures, framework and platform evaluations, customer identity and access management, Agile methodologies, CI/CD processes, and client-side frameworks React/NextJS to support the rapid growth and expansion of the 200M corporation.
@@ -24,6 +25,34 @@ I enjoy helping companies and teams build software through improving team proces
 - Mentorship of junior developers in coding best practices, design patterns, and setting proper example of how to be a professional developer.
 
 # Project Showcases
+
+## Inventory Management and Intranet Application Modernization - Northeast Ohio Grocery Store Chain
+### Background
+The client is a northeast Ohio locally owned and operated discount closeout and grocery store, with 61 stores throughout the region. Their inventory represents name brand merchandise in the groceries, health and beauty, and general merchandise categories.
+Store daily inventory ordering, pharmacy data, employee training core business functions were handled through a bespoke Intranet application written in the late 90's and early 2000's. Inventory ordering functionality is critical to keeping stock and items available through numerous internal and external warehouses. The legacy technology stack utilized was Microsoft ASP (Active Server Pages), Visual Basic 6.0 ActiveX/COM objects, and a on-premise Microsoft SQL server with SSIS/DTSX Integration Services.
+### Challenges / Pain Points
+The user experience was extremely cumbersome. Performing daily tasks of ordering inventory were clunky, unintuitive and prone to errors.
+Validation was initially handled through client-side Visual Basic and some Javascript presenting huge problems in modern browsers, blocking the release of latest versions.
+The heavy use of COM objects and ActiveX were blocking server operating systems upgrades.
+Overall security grade of the application was extremely low due to age and numerous advances in technology over the last nearly 30 years.
+Internal business processes for handling application changes were not documented, stored in source control, and without control systems.
+### Goals
+The number one priority was to remove the ActiveX/COM objects. Second was to rewrite the Inventory Ordering critical business function improving UI/UX, validation and streamlining external warehouse integrations. Due to budget constraints the entire application could not be rewritten, however, the goal of eliminating Active Server Pages when appropriate was a close third.
+Solution and Approach
+There were several constraints when preparing the application modernization strategy for the new system:
+•	On-premise hosting of the application and database
+•	Limit changes to the database structure and scheme due to other systems integrations and maintain the existing SQL stored procedures
+•	Limit the external dependencies on Microsoft Azure infrastructure
+The approach is to use Domain Driven Design under a modular monolith. The audience of the application was small; less than 100 store managers who interacted with it daily. Additionally, I had only be concerned with private/internal access to the application for authentication and authorization.
+Technology Stack: .NET 9.0 / Razor pages, Entity Framework, EF PowerTools to aid in stored procedure input/output scaffolding.
+A new template was developed using Bootstrap and the Material Design Framework MudBlazor.
+Azure DevOps for source control, work items, and CI/CD pipelines was utilized.
+### Key Takeaways / Lessons Learned
+Using an agile approach to the project went very well. This kept the client informed of the progress, gave them opportunities to review progress made and discuss any questions. With a smaller team, we met weekly and after a few couple of reviews, meeting time was typically about 15-20 minutes making everyone happy.
+Having the SQL schema remain unchanged (or adjusted in a non-breaking fashion) proved to be challenging. Additionally, where appropriate, the business logic was migrated to the domain carefully.
+
+#### Skills
+Blazor · Microsoft AzureDevOps CI/CD Pipelines · Technology Leadership · Agile Methodologies · C# · .NET · MS SQL · Entity Framework · Application Modernization · Strangler Fig · Domain Driven Design
 
 ## Strategic Technology Direction, Roadmap, Application Modernization - Perfect Game
 
