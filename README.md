@@ -30,21 +30,28 @@ I enjoy helping companies and teams build software through improving team proces
 ### Background
 The client is a northeast Ohio locally owned and operated discount closeout and grocery store, with 61 stores throughout the region. Their inventory represents name brand merchandise in the groceries, health and beauty, and general merchandise categories.
 Store daily inventory ordering, pharmacy data, employee training core business functions were handled through a bespoke Intranet application written in the late 90's and early 2000's. Inventory ordering functionality is critical to keeping stock and items available through numerous internal and external warehouses. The legacy technology stack utilized was Microsoft ASP (Active Server Pages), Visual Basic 6.0 ActiveX/COM objects, and a on-premise Microsoft SQL server with SSIS/DTSX Integration Services.
+
 ### Challenges / Pain Points
 The user experience was extremely cumbersome. Performing daily tasks of ordering inventory were clunky, unintuitive and prone to errors.
 Validation was initially handled through client-side Visual Basic and some Javascript presenting huge problems in modern browsers, blocking the release of latest versions.
 The heavy use of COM objects and ActiveX were blocking server operating systems upgrades.
 Overall security grade of the application was extremely low due to age and numerous advances in technology over the last nearly 30 years.
 Internal business processes for handling application changes were not documented, stored in source control, and without control systems.
+
 ### Goals
 The number one priority was to remove the ActiveX/COM objects. Second was to rewrite the Inventory Ordering critical business function improving UI/UX, validation and streamlining external warehouse integrations. Due to budget constraints the entire application could not be rewritten, however, the goal of eliminating Active Server Pages when appropriate was a close third.
 Solution and Approach
+
 There were several constraints when preparing the application modernization strategy for the new system:
-•	On-premise hosting of the application and database
-•	Limit changes to the database structure and scheme due to other systems integrations and maintain the existing SQL stored procedures
-•	Limit the external dependencies on Microsoft Azure infrastructure
+
+* On-premise hosting of the application and database
+* Limit changes to the database structure and scheme due to other systems integrations and maintain the existing SQL stored procedures
+* Limit the external dependencies on Microsoft Azure infrastructure
+
 The approach is to use Domain Driven Design under a modular monolith. The audience of the application was small; less than 100 store managers who interacted with it daily. Additionally, I had only be concerned with private/internal access to the application for authentication and authorization.
+
 Technology Stack: .NET 9.0 / Razor pages, Entity Framework, EF PowerTools to aid in stored procedure input/output scaffolding.
+
 A new template was developed using Bootstrap and the Material Design Framework MudBlazor.
 Azure DevOps for source control, work items, and CI/CD pipelines was utilized.
 ### Key Takeaways / Lessons Learned
