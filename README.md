@@ -7,7 +7,7 @@
 - Technology Executive
 - Cloud Architect
 - Operational Team Lead with deep hands on experience
-- Software Craftsmanship and Design Patterns
+- AI-assisted development and tooling to 10X developer productivity based on software craftsmanship and design patterns
 - Ability to navigate complex situations with minimum information to provide clarity, direction and an actionable path forward
 
 I enjoy helping companies and teams build software through improving team processes, delivering business value utilizing my 20 year experience in software design principles.
@@ -119,6 +119,13 @@ Cross-functional Team Leadership · SAP Integration · Angular · C# · Domain-D
 # Tech Profile
 
 A listing of recent technologies and other items to help give additional context. Hardly an exhaustive list.
+
+### AI
+- Anthropic Claude
+- Github Copilot
+- ChatGBT
+- Agenic workflows
+- MCP servers
 
 ### Languages
 
