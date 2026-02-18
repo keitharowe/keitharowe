@@ -206,6 +206,10 @@ A listing of recent technologies and other items to help give additional context
 - TSQL, stored procedures, indexes, maintenance tasks
 - Performance tuning
 
+### Logging / Logging Platforms
+- Azure Application Insights / Azure Monintor
+- Sentry
+
 ### Scripting
 
 - Powershell
