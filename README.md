@@ -95,11 +95,11 @@ Code was not routinely merged into a main branch for other developers.
 
 ### Phase III Defining the Future State and Software Architecture
 
-Perfect Game USA over the years has put an enormous effort into the software that runs their business without a long-term vision. Bennett Adelson worked with Perfect Game to define the future tech stack and direction.
+Perfect Game USA over the years has put an enormous effort into the software that runs their business without a long-term vision. Bennett Adelson worked with Perfect Game to define the future tech stack and direction. This engagement included designing and implementing a scalable enterprise data warehouse to support core business intelligence and reporting, along with preparation for AI search and advanced analytics workloads using Azure Data Factory (ADF) to orchestrate data ingestion, transformation, and embedding pipelines that support vector database capabilities for semantic search and machine learning applications.
 
 #### Skills
 
-Technology Roadmapping · Microsoft Azure · Technology Leadership · Agile Methodologies · C# · .NET Core · Application Modernization · Application Programming Interfaces (API) · NextJS · Strangler Fig · Domain Driven Design
+Technology Roadmapping · Microsoft Azure · Technology Leadership · Agile Methodologies · C# · .NET Core · Application Modernization · Application Programming Interfaces (API) · NextJS · Strangler Fig · Domain Driven Design · Azure Data Factory · Data Lake · Vector embeddings · Data warehouse architecture 
 
 ## Application Modernization – FirstEnergy, Pennsylvania Customer Assistance Program - PCAP
 
@@ -125,7 +125,6 @@ A listing of recent technologies and other items to help give additional context
 - Github Copilot
 - ChatGBT
 - Agenic workflows
-- MCP servers
 
 ### Languages
 
