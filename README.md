@@ -14,6 +14,9 @@ I enjoy helping companies and teams build software through improving team proces
 
 # Recent Accomplishments
 
+- Led an enterprise data platform modernization for a national staffing firm. Migrated integration and orchestration off a seat-licensed third-party platform onto Azure Data Factory, designed and built a governed Snowflake enterprise data warehouse using a medallion architecture with streams, tasks, and slowly changing dimension history, and automated the employee identity lifecycle so onboarding, role changes, and offboarding stay consistent across the corporate directory, HR, and commissions systems.
+- Developed and delivered a security remediation program for the same platform, closing findings that ranged from secrets committed to source and unauthenticated access to employee data, to public internet exposure of on-prem APIs. Re-architected on-prem data access behind a Self-Hosted Integration Runtime and private endpoints so internal systems are no longer reachable from the public internet.
+- Established the supporting engineering platform: trunk-based CI/CD with automatic development deploys and approval-gated production, Azure Monitor and Log Analytics observability with alerting into Microsoft Teams, a private developer portal that publishes API specifications from the build, and a branded email domain on Azure Communication Services.
 - Application Modernization project for a northeast Ohio locally owned and operated discount closeout and grocery store, with 61 stores throughout the region, completed and launched in 12 month engagement resulting in improved speed and accuracy in warehouse orders, improved User Experience, and clearing the blocker for infrastructure upgrades
 - Avon Lake High School - C# and API Development, held session with Avon Lake High School AP Computer Science students (grades 10, 11, and 12). We covered API development with Blazor and C#, talked about careers in the field and topics such as client/server, http verbs, status codes, and data modeling. While we didn't get a chance to finish our homework forecaster based on the NOAA weather API, it was good to be back in the classroom after my days at Microsoft's TEALS.
 - Team Leadership and Cloud migration: Instituted software development best practices, cloud migration and future architecture for a 200M corporation; leading to faster delivery of new features and higher code quality.
@@ -25,6 +28,41 @@ I enjoy helping companies and teams build software through improving team proces
 - Mentorship of junior developers in coding best practices, design patterns, and setting proper example of how to be a professional developer.
 
 # Project Showcases
+
+## Enterprise Data Platform Modernization and Cloud Migration for a National Staffing Firm
+
+### Background
+The client is a national staffing and workforce solutions company that places thousands of temporary, contract, and direct hire employees across the United States. Their employee data moves through a chain of systems: an on-prem AS/400, several internal HR and metadata applications, Active Directory, a Snowflake data warehouse, and downstream systems for sales commissions and payroll. Historically these systems were stitched together by a third-party integration platform (iPaaS) and a collection of scripts that had grown difficult to reason about and expensive to license. Bennett Adelson was engaged to define the target architecture, move orchestration onto Azure, close a backlog of security findings, and build a governed enterprise data warehouse the business could trust for reporting and commissions.
+
+### Challenges / Pain Points
+Integration ran on a seat-licensed third-party platform with limited visibility into what ran, what failed, and why. Several on-prem APIs were reachable from the public internet and protected only by a static API key, and some secrets and keys had been committed to source control. Read access to employee data was not consistently authenticated. The warehouse had grown without clear governance, so transformations were ad hoc, data ownership was unclear, and quality problems could fail silently. One such failure, an oversized value quietly breaking a nightly load, went unnoticed for roughly seven weeks. Employee onboarding and offboarding leaned on manual steps, the nightly directory sync required a person to review and release it every day, and returning employees were sometimes confused with their old terminated records. There was no standard for CI/CD, environments, or observability.
+
+### Goals
+- Make Azure Data Factory the single orchestration standard, replacing the third-party iPaaS and the loose scripts around it.
+- Design and build a governed Snowflake enterprise data warehouse that reporting and commissions could depend on.
+- Remove public exposure of on-prem systems and adopt security by default: managed identities, Key Vault, and private networking.
+- Automate the employee identity lifecycle so onboarding, changes, and offboarding stay consistent across systems without daily manual work.
+- Stand up trunk-based CI/CD, monitoring, and alerting so problems surface loudly instead of silently.
+
+### Solution and Approach
+
+**Data and Integration Architecture.** We designed the data flow as a single directional loop rather than a web of point to point connections. Source systems land data in Snowflake, Azure Data Factory compares and orchestrates, custom .NET APIs carry out the writes back to operational systems such as Active Directory, and the results are captured back in Snowflake. A Self-Hosted Integration Runtime became the standard way to reach on-prem systems, which let us retire the public API exposure instead of guarding it. Moving orchestration onto Azure Data Factory also changed the cost model from paid seats to per-run execution and gave us built-in run history and monitoring the previous platform lacked.
+
+**Enterprise Data Warehouse (Snowflake).** This was the center of the engagement. We organized the warehouse into a medallion architecture, a layered model that promotes data through raw, staging, silver, and gold tiers so each step is auditable and can be rebuilt from the one before it. Incremental movement between layers runs on Snowflake streams and tasks, which capture changes and merge them forward without full reloads. The core employee dimension tracks history using slowly changing dimensions (Type 2), so the warehouse can answer not just what an employee looks like today but what they looked like at any point in time. We also made data ownership explicit by naming a single writer of record for each field, which ended a class of silent conflicts that no amount of after the fact reconciliation had been able to fix. The result is a governed warehouse with clean lineage feeding sales commissions and business reporting.
+
+**Azure and DevOps.** The platform follows Azure landing zone practices with a naming and tagging convention, so a resource name alone tells you what it is and which environment it belongs to. Deployments use a trunk-based model: a single main branch deploys to a development environment automatically and to production behind an approval gate. Data Factory, including its global parameters, deploys through ARM and PowerShell. A private developer portal publishes API documentation automatically from the build. Function Apps handle event and transformation work, a branded email domain sends operational notifications through Azure Communication Services, and an observability stack routes Data Factory diagnostics into Log Analytics with Azure Monitor alerts delivered to Microsoft Teams.
+
+**Security.** Security work was tracked openly as a numbered set of findings with severity and remediation status. Among the items closed: an Azure AD client secret that had been hardcoded in source was migrated to managed identity and certificate based authentication; an API key committed to source was removed and rotated; API key comparison was moved to a constant time implementation to remove a timing side channel; unauthenticated read access to employee data was closed; and a search endpoint vulnerable to wildcard abuse was escaped. The larger architectural fix was removing public internet exposure of on-prem APIs by routing all on-prem access through the Self-Hosted Integration Runtime and private endpoints, which shrinks the attack surface to internal callers only.
+
+**Identity Lifecycle and Offboarding.** When someone is hired, changes roles, or leaves, their record has to stay in step across the corporate directory, the internal HR systems, and the commissions platform. For a long time that reconciliation depended on a person reviewing and releasing a nightly job by hand. We replaced it with a job that runs on its own overnight and only stops to ask for a human when a batch looks abnormal, so a bad batch cannot go out unnoticed. Along the way we found and fixed a few problems that had been quietly causing trouble. Returning employees were sometimes matched to their old terminated records, which threw off commissions and stalled the sync; we traced that to a stale background copy of employee data that had silently stopped updating, rebuilt it, and that one fix cleared the blockage and also healed a related gap where new hires were not showing up for commissions. We sorted out which system is allowed to write which field so two pipelines could not overwrite each other, and made sure new accounts carry the identifier the commissions system needs in order to see them.
+
+Technology Stack: Azure Data Factory, Snowflake (streams, tasks, medallion architecture, slowly changing dimensions), Self-Hosted Integration Runtime, .NET and C# APIs, Azure Functions, Managed Identity, Azure Key Vault, Private Endpoints and Private DNS, Azure Communication Services, Log Analytics, Azure Monitor, Application Insights, Azure DevOps (trunk-based CI/CD, ARM, Bicep, PowerShell), and Active Directory. The work migrated integration off SnapLogic and connects operational systems including CaptivateIQ, PayCor, NetSuite, and JobDiva.
+
+### Key Takeaways / Lessons Learned
+Moving orchestration onto a managed platform with security by default lowered cost, improved visibility, and closed an entire category of public exposure at the same time. The most durable data fix was not a cleverer reconciliation but simply deciding who owns each field, a single writer of record, and enforcing it. The failures worth fearing are the silent ones: a single oversized value froze a nightly load for seven weeks before anyone noticed, which is the strongest argument for loud alerting and fail fast guardrails. A warehouse organized into clear layers with change driven promotion and real history is far easier to trust, extend, and reason about than a pile of ad hoc transformations.
+
+#### Skills
+Snowflake · Data Warehouse Architecture · Medallion Architecture · Enterprise Data Architecture · ELT / ETL · Slowly Changing Dimensions (SCD Type 2) · Streams and Tasks · Azure Data Factory · Self-Hosted Integration Runtime · Azure Landing Zones · Managed Identity · Azure Key Vault · Private Endpoints · Security Remediation · DevSecOps · Trunk-Based Development · CI/CD · Observability · Active Directory · Identity Lifecycle Automation · Technology Leadership · C# · .NET
 
 ## Inventory Management and Intranet Application Modernization - Northeast Ohio Grocery Store Chain
 ### Background
@@ -61,13 +99,13 @@ Having the SQL schema remain unchanged (or adjusted in a non-breaking fashion) p
 #### Skills
 Blazor · Microsoft AzureDevOps CI/CD Pipelines · Technology Leadership · Agile Methodologies · C# · .NET · MS SQL · Entity Framework · Application Modernization · Strangler Fig · Domain Driven Design
 
-## Strategic Technology Direction, Roadmap, Application Modernization - Perfect Game
+## Strategic Technology Direction, Roadmap, Application Modernization for a National Youth Baseball Organization
 
-Perfect Game USA is an organization dedicated to the development and promotion of youth baseball.
+The client is a national organization dedicated to the development and promotion of youth baseball.
 They host travel team tournaments and individual showcases, to promote and provide valuable
 exposure for young athletes and to gain exposure to college coaches and MLB scouts.
 
-Prior to Bennett Adelson’s involvement, Perfect Game lacked effective internal software development,
+Prior to Bennett Adelson's involvement, the client lacked effective internal software development,
 delivery, poor code quality, little to no QA and no Agile processes or ceremonies. The team often faced
 urgent issues without the necessary system processes or guidance.
 
@@ -95,7 +133,7 @@ Code was not routinely merged into a main branch for other developers.
 
 ### Phase III Defining the Future State and Software Architecture
 
-Perfect Game USA over the years has put an enormous effort into the software that runs their business without a long-term vision. Bennett Adelson worked with Perfect Game to define the future tech stack and direction. This engagement included designing and implementing a scalable enterprise data warehouse to support core business intelligence and reporting, along with preparation for AI search and advanced analytics workloads using Azure Data Factory (ADF) to orchestrate data ingestion, transformation, and embedding pipelines that support vector database capabilities for semantic search and machine learning applications.
+The client over the years has put an enormous effort into the software that runs their business without a long-term vision. Bennett Adelson worked with the client to define the future tech stack and direction. This engagement included designing and implementing a scalable enterprise data warehouse to support core business intelligence and reporting, along with preparation for AI search and advanced analytics workloads using Azure Data Factory (ADF) to orchestrate data ingestion, transformation, and embedding pipelines that support vector database capabilities for semantic search and machine learning applications.
 
 #### Skills
 
@@ -123,8 +161,8 @@ A listing of recent technologies and other items to help give additional context
 ### AI
 - Anthropic Claude
 - Github Copilot
-- ChatGBT
-- Agenic workflows
+- ChatGPT
+- Agentic workflows
 
 ### Languages
 
@@ -146,15 +184,14 @@ A listing of recent technologies and other items to help give additional context
 
 ### Paradigms
 
-- Azure Enterprize Architecture / Azure Landing Zones
+- Azure Enterprise Architecture / Azure Landing Zones
 - Domain Driven Design
 - Minimum Apis
 - GraphQL
 - CI/CD pipelines (DevSecOps)
-- API / Microservces
+- API / Microservices
 - Events/Messaging
 - Mobile development
-- Docker
 - Azure Aspire
 - git, branching strategies
 - Event Storming
@@ -163,10 +200,15 @@ A listing of recent technologies and other items to help give additional context
 
 ### Security
 - OAuth
-- OpenID Connect - OICD
-- EntraAD, MSAL
+- OpenID Connect (OIDC)
+- Entra ID, MSAL
 - RBAC
-- OSWAP
+- OWASP
+- Managed Identity and workload identity
+- Azure Key Vault, secrets management and rotation
+- Private endpoints and network isolation
+- Security issue tracking and remediation
+- PII protection and data access controls
 - General best practices as applied to Software Engineering
 
 ### Test
@@ -177,7 +219,6 @@ A listing of recent technologies and other items to help give additional context
 ### Cloud
 
 - Azure Certified [verify](https://learn.microsoft.com/en-us/users/keithalanrowe/credentials/a314102f78ba1346?ref=https%3A%2F%2Fwww.linkedin.com%2F)
-- Containers
 - Storage
 - Compute
 - Security
@@ -185,20 +226,37 @@ A listing of recent technologies and other items to help give additional context
 - Governance
 - Compliance
 - PaaS, Serverless
-- Kubernetes
-- Azure Container Apps
+- Private Link and Private Endpoints
+- Self-Hosted Integration Runtime (SHIR)
 - Function Apps, Logic Apps
-- Observability, Application Insights, Log Application Workspaces, OpenTelemetry
+- Observability, Application Insights, Log Analytics Workspaces, OpenTelemetry
 - Resiliency
 
-### Data
-- Familiar with ETL, Snowflake, Azure Data Factory (ADF), Databricks
+### Containers and Virtualization
+
+- Docker, containerization
+- Kubernetes, Azure Kubernetes Service (AKS)
+- Azure Container Apps
+- Azure Container Instances
+- Azure Container Registry
+- Container orchestration and image build pipelines
+
+### Data Engineering and Warehousing
+- Snowflake (Streams, Tasks, medallion architecture, RBAC)
+- Azure Data Factory (pipelines, triggers, global parameters, Self-Hosted Integration Runtime)
+- Medallion and multi-hop architecture (raw, staging, silver, gold)
+- ELT and ETL
+- Dimensional modeling, star schema, Slowly Changing Dimensions (Type 2)
+- Change data capture and incremental loads
+- Data lineage, governance, and writer-of-record ownership modeling
+- Data quality and reconciliation
+- Databricks
 - Python (non-professional)
 
 ### Database - Relational, Document
 
 - Microsoft SQL Server
-- Datawarehouse, Data Lake
+- Data Warehouse, Data Lake
 - PostgreSQL
 - Mongo/Cosmos
 - Oracle / API integrations
@@ -206,7 +264,7 @@ A listing of recent technologies and other items to help give additional context
 - Performance tuning
 
 ### Logging / Logging Platforms
-- Azure Application Insights / Azure Monintor
+- Azure Application Insights / Azure Monitor
 - Sentry
 
 ### Scripting
@@ -226,9 +284,9 @@ A listing of recent technologies and other items to help give additional context
 - Github
 - Supabase
 - Atlassian - Jira, Confluence
-- Azure Communication Services, Twillo / Sendgrid
+- Azure Communication Services, Twilio / Sendgrid
 - Figma
-- SMTP, Sendgrid, Twillo, Azure Communication Services
+- SMTP, Sendgrid, Twilio, Azure Communication Services
 
 ### Payment Gateways - API
 
@@ -271,9 +329,3 @@ A listing of recent technologies and other items to help give additional context
 ### Business Operating Systems
 
 - EOS Entrepreneurial Operating System
-
-
-<!---
-keitharowe/keitharowe is a ✨ special ✨ repository because its `README.md` (this file) appears on your GitHub profile.
-You can click the Preview link to take a look at your changes.
---->
