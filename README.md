@@ -7,7 +7,7 @@
 - Technology Executive
 - Cloud Architect
 - Operational Team Lead with deep hands on experience
-- AI-assisted development and tooling to 10X developer productivity based on software craftsmanship and design patterns
+- AI-assisted development and tooling to amplify developer productivity based on software craftsmanship and design patterns
 - Ability to navigate complex situations with minimum information to provide clarity, direction and an actionable path forward
 
 I enjoy helping companies and teams build software through improving team processes, delivering business value utilizing my 20 year experience in software design principles.
