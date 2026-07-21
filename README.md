@@ -35,7 +35,15 @@ I enjoy helping companies and teams build software through improving team proces
 The client is a national staffing and workforce solutions company that places thousands of temporary, contract, and direct hire employees across the United States. Their employee data moves through a chain of systems: an on-prem AS/400, several internal HR and metadata applications, Active Directory, a Snowflake data warehouse, and downstream systems for sales commissions and payroll. Historically these systems were stitched together by a third-party integration platform (iPaaS) and a collection of scripts that had grown difficult to reason about and expensive to license. Bennett Adelson was engaged to define the target architecture, move orchestration onto Azure, close a backlog of security findings, and build a governed enterprise data warehouse the business could trust for reporting and commissions.
 
 ### Challenges / Pain Points
-Integration ran on a seat-licensed third-party platform with limited visibility into what ran, what failed, and why. Several on-prem APIs were reachable from the public internet and protected only by a static API key, and some secrets and keys had been committed to source control. Read access to employee data was not consistently authenticated. The warehouse had grown without clear governance, so transformations were ad hoc, data ownership was unclear, and quality problems could fail silently. One such failure, an oversized value quietly breaking a nightly load, went unnoticed for roughly seven weeks. Employee onboarding and offboarding leaned on manual steps, the nightly directory sync required a person to review and release it every day, and returning employees were sometimes confused with their old terminated records. There was no standard for CI/CD, environments, or observability.
+- Integration ran on a seat-licensed third-party platform with limited visibility into what ran, what failed, and why.
+- On-prem APIs were reachable from the public internet, protected only by a static API key.
+- Secrets and keys had been committed to source control.
+- Read access to employee data was not consistently authenticated.
+- The warehouse had grown without governance — ad hoc transformations, unclear ownership, and quality problems that could fail silently.
+- Onboarding and offboarding leaned on manual steps.
+- The nightly directory sync required a person to review and release it every day.
+- Returning employees were sometimes confused with their old terminated records.
+- No standard for CI/CD, environments, or observability.
 
 ### Goals
 - Make Azure Data Factory the single orchestration standard, replacing the third-party iPaaS and the loose scripts around it.
